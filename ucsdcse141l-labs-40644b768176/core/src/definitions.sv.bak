@@ -158,29 +158,6 @@ package definitions;
         logic [mask_length_gp-1:0] barrier_mask_r_f;
         logic [mask_length_gp-1:0] barrier_r_f;
     } debug_s;
-	 
-	 // Control Unit
-	 typedef struct packed {
-		instruction_s c_unit;
-	 } control;
-	 
-	 //Pipeline ID/EX
-	 typedef struct packed {
-		instruction_s in;
-		control signal;
-		logic [9:0] add_result;
-		logic [31:0] r_data_1;
-		logic [31:0] r_data_2;
-	 } ID_EX;
-	 
-	 //Pipeline EX/MEM
-	 typedef struct packed {
-		control signal;
-		logic [31:0] alu_result;
-		logic [31:0] zero;
-		logic [31:0] r_data_2;
-		instruction_s instr;
-	 } EX_MEM;
     
     //`endif
 endpackage // defintions
